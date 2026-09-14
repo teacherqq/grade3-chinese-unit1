@@ -60,7 +60,9 @@
   .rw-card{background:#fff;border:2px solid #e2e8f0;border-radius:14px;padding:12px 18px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:.15s;user-select:none}
   .rw-card:hover{border-color:#94a3b8;transform:translateY(-2px)}
   .rw-card .w{font-size:1.7rem;font-weight:700}
+  .rw-card .mid{display:flex;flex-direction:column;line-height:1.35}
   .rw-card .py{font-size:.85rem;color:var(--ink2)}
+  .en-gloss{font-size:.75rem;color:#94a3b8;font-weight:600;letter-spacing:.02em}
   .rw-card .sp{font-size:1.2rem;opacity:.55}
   .rw-card.speaking{border-color:var(--l2);background:var(--l2-bg)}
   /* write words */
@@ -115,6 +117,8 @@
   #practice .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
   .tab-btn{border:2px solid #e2e8f0;background:#fff;border-radius:999px;padding:9px 20px;font-size:1rem;font-weight:700;cursor:pointer;color:var(--ink2);transition:.15s}
   .tab-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .tab-btn small{display:block;font-size:.68rem;color:#94a3b8;font-weight:600}
+  .tab-btn.active small{color:#cbd5e1}
   .panel{display:none;background:var(--card);border:2px solid #e2e8f0;border-radius:20px;padding:24px 26px}
   .panel.active{display:block}
   .bank{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;padding:14px;background:#f8fafc;border-radius:14px;border:2px dashed #cbd5e1}
@@ -129,6 +133,10 @@
   .blank:hover{background:#f1f5f9}
   .blank.ok{color:var(--ok);border-bottom-color:var(--ok);background:var(--ok-bg)}
   .blank.bad{color:var(--bad);border-bottom-color:var(--bad);background:var(--bad-bg)}
+  .nav-links a small{font-size:.66rem;color:#94a3b8;font-weight:600;margin-left:4px;letter-spacing:.03em}
+  .pat-card .pat-en{font-size:.85rem;color:var(--ink2);font-weight:700;margin-top:2px}
+  .pat-card li .li-en{display:block;font-size:.78rem;color:#94a3b8}
+  .q-en{display:block;font-size:.85rem;color:#94a3b8;margin-top:2px}
   .q-line{font-size:1.25rem}
   .opt-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
   .opt{border:2px solid #e2e8f0;background:#fff;border-radius:12px;padding:8px 22px;font-size:1.15rem;font-weight:700;cursor:pointer;transition:.12s}
@@ -168,6 +176,7 @@
   .fbtn.primary:hover{background:#14b8a6}
   .fbtn.warn{background:#d97706;border-color:#d97706}
   .fbtn.warn:hover{background:#f59e0b}
+  .fbtn small{font-size:.68rem;font-weight:600;opacity:.75;margin-left:2px}
   .fbtn.on{background:#0d9488;border-color:#0d9488}
   footer{max-width:1100px;margin:40px auto 30px;padding:0 20px;color:#94a3b8;font-size:.9rem;text-align:center}
   @media (max-width:640px){
@@ -183,58 +192,58 @@
   <div class="nav-inner">
     <div class="logo">📕 <span class="b1">單元一</span> · <span class="b2">學習重點</span></div>
     <div class="nav-links">
-      <a href="#overview">總覽</a>
-      <a href="#read">認讀字詞</a>
-      <a href="#write">書寫字詞</a>
-      <a href="#knowledge">字詞知識</a>
-      <a href="#patterns">句式</a>
-      <a href="#practice">練習題</a>
+      <a href="#overview">總覽<small>Home</small></a>
+      <a href="#read">認讀字詞<small>Words</small></a>
+      <a href="#write">書寫字詞<small>Writing</small></a>
+      <a href="#knowledge">字詞知識<small>Know-how</small></a>
+      <a href="#patterns">句式<small>Patterns</small></a>
+      <a href="#practice">練習題<small>Practice</small></a>
     </div>
   </div>
 </nav>
 
 <header class="hero" id="overview">
   <div class="hero-card">
-    <h1>單元一 學習重點<small>三年級 中文 ·《我愛學語文》二上 第一冊</small></h1>
+    <h1>單元一 學習重點<small>三年級 中文 ·《我愛學語文》二上 第一冊 · Grade 3 Chinese · Unit 1 Study Guide</small></h1>
     <div class="lesson-cards" id="lessonCards"></div>
   </div>
 </header>
 
 <main>
   <section id="read">
-    <div class="sec-head"><h2>🗣️ 認讀字詞</h2><span class="en">Read &amp; Recognise</span></div>
-    <p class="sec-desc">點擊詞語卡可以聽讀音，跟着讀一讀。</p>
+    <div class="sec-head"><h2>🗣️ 認讀字詞</h2><span class="en">Read &amp; Recognise · 字詞 Words</span></div>
+    <p class="sec-desc">點擊詞語卡可以聽讀音，跟着讀一讀。<span class="en-gloss">Tap a word card to hear it read aloud — read along!</span></p>
     <div id="readBlocks"></div>
   </section>
 
   <section id="write">
-    <div class="sec-head"><h2>✏️ 書寫字詞</h2><span class="en">Write · 田字格</span></div>
-    <p class="sec-desc">每個字都放在田字格中。點擊字 → 在格內示範筆畫動畫；點擊字旁邊的紅色「筆」按鈕 → <b>全屏展示筆畫順序</b>（可放慢、可逐字翻頁，還有筆畫小測驗）。</p>
+    <div class="sec-head"><h2>✏️ 書寫字詞</h2><span class="en">Write · 田字格 Tian Zi Ge Grid</span></div>
+    <p class="sec-desc">每個字都放在田字格中。點擊字 → 在格內示範筆畫動畫；點擊字旁邊的紅色「筆」按鈕 → <b>全屏展示筆畫順序</b>（可放慢、可逐字翻頁，還有筆畫小測驗）。<span class="en-gloss">Every character sits in a Tian Zi Ge grid. Tap a character to see the stroke animation in its grid; tap the red「筆」button beside it for a <b>fullscreen stroke-order demo</b> (slow mode, word-by-word navigation, and a stroke quiz).</span></p>
     <div id="writeBlocks"></div>
   </section>
 
   <section id="knowledge">
-    <div class="sec-head"><h2>🧠 字詞知識</h2><span class="en">形近字 · 多音字 · 部首 · 動詞</span></div>
+    <div class="sec-head"><h2>🧠 字詞知識</h2><span class="en">形近字 Look-alikes · 多音字 Multi-reading · 部首 Radicals · 動詞 Verbs</span></div>
     <div class="kn-grid">
       <div class="kn-card">
-        <h3>🔍 形近字 <span class="tag">分清它們</span></h3>
+        <h3>🔍 形近字 <span class="tag">Look-alike characters · 分清它們</span></h3>
         <div class="fx-row"><div class="fx-pair"><div class="fx-char">像<span class="p">xiàng</span></div><div class="fx-char">象<span class="p">xiàng</span></div></div><div class="fx-use"><b>像</b>：好像、畫像<br><b>象</b>：大象、象鼻</div></div>
         <div class="fx-row"><div class="fx-pair"><div class="fx-char">辛<span class="p">xīn</span></div><div class="fx-char">幸<span class="p">xìng</span></div></div><div class="fx-use"><b>辛</b>：辛苦、辛勞<br><b>幸</b>：幸好、幸福</div></div>
         <div class="fx-row"><div class="fx-pair"><div class="fx-char">藍<span class="p">lán</span></div><div class="fx-char">籃<span class="p">lán</span></div></div><div class="fx-use"><b>藍</b>：藍天、藍色<br><b>籃</b>：籃球、竹籃</div></div>
       </div>
       <div class="kn-card">
-        <h3>🎵 多音字 <span class="tag">一字多音</span></h3>
+        <h3>🎵 多音字 <span class="tag">Multi-reading characters · 一字多音</span></h3>
         <div class="fx-row"><div class="dy-char">好</div><div style="display:flex;flex-direction:column;gap:6px"><div class="dy-read">hǎo（三聲）<span class="ex">好人 · 很好 · 好孩子</span></div><div class="dy-read">hào（四聲）<span class="ex">好動 · 愛好</span></div></div></div>
         <div class="fx-row"><div class="dy-char">得</div><div style="display:flex;flex-direction:column;gap:6px"><div class="dy-read">dé（二聲）<span class="ex">得到 · 得獎</span></div><div class="dy-read">děi（三聲）<span class="ex">我得去做功課了</span></div></div></div>
         <div class="fx-row"><div class="dy-char">着</div><div style="display:flex;flex-direction:column;gap:6px"><div class="dy-read">zhe（輕聲）<span class="ex">看着書 · 陪着媽媽</span></div><div class="dy-read">zháo（二聲）<span class="ex">睡着了 · 着火</span></div></div></div>
       </div>
       <div class="kn-card">
-        <h3>🧩 部首 <span class="tag">認一認</span></h3>
-        <div class="fx-row"><div class="bs-char">扌</div><div class="fx-use" style="font-size:1.05rem"><b>提手旁</b> —— 和手的動作有關<br><span class="verb-chip">抓</span><span class="verb-chip">扶</span><span class="verb-chip">探</span><span class="verb-chip">接</span><span class="verb-chip">換</span><span class="verb-chip">摘</span><span class="verb-chip">摸</span><span class="verb-chip">伸</span></div></div>
-        <div class="fx-row"><div class="bs-char">宀</div><div class="fx-use" style="font-size:1.05rem"><b>寶蓋頭</b> —— 常和房屋、家有關<br><span class="verb-chip">定</span><span class="verb-chip">家</span><span class="verb-chip">它</span></div></div>
+        <h3>🧩 部首 <span class="tag">Radicals · 認一認</span></h3>
+        <div class="fx-row"><div class="bs-char">扌</div><div class="fx-use" style="font-size:1.05rem"><b>提手旁</b> —— 和手的動作有關 <span class="en-gloss">the hand radical — relates to hand actions</span><br><span class="verb-chip">抓</span><span class="verb-chip">扶</span><span class="verb-chip">探</span><span class="verb-chip">接</span><span class="verb-chip">換</span><span class="verb-chip">摘</span><span class="verb-chip">摸</span><span class="verb-chip">伸</span></div></div>
+        <div class="fx-row"><div class="bs-char">宀</div><div class="fx-use" style="font-size:1.05rem"><b>寶蓋頭</b> —— 常和房屋、家有關 <span class="en-gloss">the roof radical — often relates to houses and home</span><br><span class="verb-chip">定</span><span class="verb-chip">家</span><span class="verb-chip">它</span></div></div>
       </div>
       <div class="kn-card">
-        <h3>🏃 動詞 <span class="tag">動作詞</span></h3>
+        <h3>🏃 動詞 <span class="tag">Action verbs · 動作詞</span></h3>
         <div class="fx-row"><div class="fx-use" style="font-size:1.05rem"><b>第一課《欣欣的故事》</b><br><span class="verb-chip">講</span><span class="verb-chip">唱</span><span class="verb-chip">穿</span><span class="verb-chip">問</span><span class="verb-chip">畫</span><span class="verb-chip">踢</span><span class="verb-chip">做</span></div></div>
         <div class="fx-row"><div class="fx-use" style="font-size:1.05rem"><b>第四課《在爸爸的肩膀上》</b><br><span class="verb-chip">坐</span><span class="verb-chip">扶</span><span class="verb-chip">抓</span><span class="verb-chip">摸</span><span class="verb-chip">聞</span><span class="verb-chip">摘</span><span class="verb-chip">伸</span></div></div>
       </div>
@@ -244,23 +253,23 @@
   <section id="patterns">
     <div class="sec-head"><h2>💬 句式句型</h2><span class="en">Sentence Patterns</span></div>
     <div class="pat-grid">
-      <div class="pat-card p1"><div class="pat">越 …… 越 ……</div><ul><li>妹妹<b>越</b>長<b>越</b>漂亮。</li><li>天氣<b>越</b>來<b>越</b>冷了。</li></ul></div>
-      <div class="pat-card p1"><div class="pat">會 …… 還會 ……</div><ul><li>我<b>會</b>講故事，<b>還會</b>唱歌。</li><li>弟弟<b>會</b>穿衣服，<b>還會</b>綁鞋帶。</li></ul></div>
-      <div class="pat-card p2"><div class="pat">…… ，還 ……。</div><ul><li>他是我的同學，<b>還</b>是我的好朋友。</li><li>我喜歡畫畫，<b>還</b>喜歡看書。</li></ul></div>
-      <div class="pat-card p2"><div class="pat">除了 …… 就 ……。</div><ul><li>他<b>除了</b>喜歡踢球，<b>就</b>喜歡游泳。</li><li>書包裏<b>除了</b>課本，<b>就</b>只有一枝筆。</li></ul></div>
-      <div class="pat-card p3"><div class="pat">…… 一 …… ，就 ……。</div><ul><li>他<b>一</b>到家，<b>就</b>開始做功課。</li><li>弟弟<b>一</b>聽到音樂，<b>就</b>跳起舞來。</li></ul></div>
-      <div class="pat-card p4"><div class="pat">…… 得 ……</div><ul><li>我坐<b>得</b>穩。</li><li>他扶<b>得</b>牢。</li><li>弟弟抓<b>得</b>緊。</li></ul></div>
+      <div class="pat-card p1"><div class="pat">越 …… 越 ……</div><div class="pat-en">the more … the more …</div><ul><li>妹妹<b>越</b>長<b>越</b>漂亮。<span class="li-en">My little sister grows prettier and prettier.</span></li><li>天氣<b>越</b>來<b>越</b>冷了。<span class="li-en">The weather is getting colder and colder.</span></li></ul></div>
+      <div class="pat-card p1"><div class="pat">會 …… 還會 ……</div><div class="pat-en">can … and can also …</div><ul><li>我<b>會</b>講故事，<b>還會</b>唱歌。<span class="li-en">I can tell stories, and I can also sing.</span></li><li>弟弟<b>會</b>穿衣服，<b>還會</b>綁鞋帶。<span class="li-en">My little brother can get dressed, and he can also tie his shoelaces.</span></li></ul></div>
+      <div class="pat-card p2"><div class="pat">…… ，還 ……。</div><div class="pat-en">…, and also …</div><ul><li>他是我的同學，<b>還</b>是我的好朋友。<span class="li-en">He is my classmate, and also my good friend.</span></li><li>我喜歡畫畫，<b>還</b>喜歡看書。<span class="li-en">I like drawing, and I also like reading.</span></li></ul></div>
+      <div class="pat-card p2"><div class="pat">除了 …… 就 ……。</div><div class="pat-en">apart from …, (there is) only …</div><ul><li>他<b>除了</b>喜歡踢球，<b>就</b>喜歡游泳。<span class="li-en">Apart from playing football, he only likes swimming.</span></li><li>書包裏<b>除了</b>課本，<b>就</b>只有一枝筆。<span class="li-en">Apart from textbooks, there is only one pen in the schoolbag.</span></li></ul></div>
+      <div class="pat-card p3"><div class="pat">…… 一 …… ，就 ……。</div><div class="pat-en">as soon as …, (then) …</div><ul><li>他<b>一</b>到家，<b>就</b>開始做功課。<span class="li-en">As soon as he gets home, he starts his homework.</span></li><li>弟弟<b>一</b>聽到音樂，<b>就</b>跳起舞來。<span class="li-en">As soon as my brother hears music, he starts to dance.</span></li></ul></div>
+      <div class="pat-card p4"><div class="pat">…… 得 ……</div><div class="pat-en">describes how well an action is done (complement of degree)</div><ul><li>我坐<b>得</b>穩。<span class="li-en">I sit steadily.</span></li><li>他扶<b>得</b>牢。<span class="li-en">He holds on firmly.</span></li><li>弟弟抓<b>得</b>緊。<span class="li-en">My brother grips tightly.</span></li></ul></div>
     </div>
   </section>
 
   <section id="practice">
     <div class="sec-head"><h2>🎯 練習題</h2><span class="en">Practice</span></div>
-    <p class="sec-desc">四種互動練習，做完可以看看分數！</p>
+    <p class="sec-desc">四種互動練習，做完可以看看分數！<span class="en-gloss">Four interactive exercises — check your score when you're done!</span></p>
     <div class="tabs">
-      <button class="tab-btn active" data-tab="fill">① 選詞填空</button>
-      <button class="tab-btn" data-tab="duo">② 多音字選擇</button>
-      <button class="tab-btn" data-tab="fx">③ 形近字選擇</button>
-      <button class="tab-btn" data-tab="pat">④ 句式練習</button>
+      <button class="tab-btn active" data-tab="fill">① 選詞填空<small>Fill in the blanks</small></button>
+      <button class="tab-btn" data-tab="duo">② 多音字選擇<small>Multi-reading</small></button>
+      <button class="tab-btn" data-tab="fx">③ 形近字選擇<small>Look-alikes</small></button>
+      <button class="tab-btn" data-tab="pat">④ 句式練習<small>Sentence patterns</small></button>
     </div>
     <div class="panel active" id="panel-fill"></div>
     <div class="panel" id="panel-duo"></div>
@@ -269,34 +278,34 @@
   </section>
 </main>
 
-<footer>單元一 學習重點 · 三年級中文 ·《我愛學語文》二上第一冊 · 筆畫動畫由 Hanzi Writer 提供</footer>
+<footer>單元一 學習重點 · 三年級中文 Unit 1 Study Guide · Grade 3 Chinese ·《我愛學語文》二上第一冊 · 筆畫動畫 Strokes by Hanzi Writer</footer>
 
 <!-- fullscreen stroke overlay -->
-<div id="fsOverlay" role="dialog" aria-label="筆畫全屏展示">
+<div id="fsOverlay" role="dialog" aria-label="筆畫全屏展示 Fullscreen stroke demo">
   <div class="fs-head">
     <div class="fs-info"><span id="fsWord"></span><span class="sub" id="fsPos"></span></div>
-    <button class="fbtn" id="fsSpeak">🔊 讀一讀</button>
-    <button class="fbtn" id="fsClose">✕ 關閉</button>
+    <button class="fbtn" id="fsSpeak">🔊 讀一讀 <small>Read</small></button>
+    <button class="fbtn" id="fsClose">✕ 關閉 <small>Close</small></button>
   </div>
   <div class="fs-body">
     <div class="fs-meta" id="fsMeta"></div>
     <div class="fs-stage">
       <div class="fs-nav">
-        <button id="fsPrev" title="上一個字">⬆</button>
-        <button id="fsNext" title="下一個字">⬇</button>
+        <button id="fsPrev" title="上一個字 Previous character">⬆</button>
+        <button id="fsNext" title="下一個字 Next character">⬇</button>
       </div>
       <div class="tzg fs-tzg"><div class="grid"></div><div id="fsWriterHost"></div></div>
       <div class="fs-nav">
-        <button id="fsPrevW" title="上一個詞">⬅</button>
-        <button id="fsNextW" title="下一個詞">➡</button>
+        <button id="fsPrevW" title="上一個詞 Previous word">⬅</button>
+        <button id="fsNextW" title="下一個詞 Next word">➡</button>
       </div>
     </div>
   </div>
   <div class="fs-controls">
-    <button class="fbtn primary" id="fsPlay">▶ 動畫示範</button>
-    <button class="fbtn warn" id="fsQuiz">✍ 筆畫小測驗</button>
-    <button class="fbtn" id="fsShow">👁 顯示整個字</button>
-    <span style="align-self:center;color:#94a3b8;font-weight:700">速度：</span>
+    <button class="fbtn primary" id="fsPlay">▶ 動畫示範 <small>Animate</small></button>
+    <button class="fbtn warn" id="fsQuiz">✍ 筆畫小測驗 <small>Quiz</small></button>
+    <button class="fbtn" id="fsShow">👁 顯示整個字 <small>Show</small></button>
+    <span style="align-self:center;color:#94a3b8;font-weight:700">速度 Speed：</span>
     <button class="fbtn spd" data-spd="0.55">🐢 慢</button>
     <button class="fbtn spd on" data-spd="1">▶ 正常</button>
     <button class="fbtn spd" data-spd="2">🐇 快</button>
@@ -310,23 +319,23 @@
 const LESSONS = [
   {
     no: 1, title: "欣欣的故事", cls: "l1", color: "var(--l1)",
-    read: [["家務","jiā wù"],["總是","zǒng shì"],["整天","zhěng tiān"],["洋娃娃","yáng wá wa"],["被子","bèi zi"],["咿咿呀呀","yī yī yā yā"],["拉","lā"],["現在","xiàn zài"],["討人喜歡","tǎo rén xǐ huān"]],
-    write: [["兩歲","liǎng suì"],["非常","fēi cháng"],["活潑","huó po"],["探望","tàn wàng"],["開始","kāi shǐ"],["換牙","huàn yá"],["穿衣服","chuān yī fú"],["幫忙","bāng máng"],["好動","hào dòng"],["奇怪","qí guài"]]
+    read: [["家務","jiā wù","housework"],["總是","zǒng shì","always"],["整天","zhěng tiān","all day long"],["洋娃娃","yáng wá wa","doll"],["被子","bèi zi","quilt"],["咿咿呀呀","yī yī yā yā","babbling"],["拉","lā","to pull"],["現在","xiàn zài","now"],["討人喜歡","tǎo rén xǐ huān","adorable"]],
+    write: [["兩歲","liǎng suì","two years old"],["非常","fēi cháng","very"],["活潑","huó po","lively"],["探望","tàn wàng","to visit"],["開始","kāi shǐ","to start"],["換牙","huàn yá","to lose baby teeth"],["穿衣服","chuān yī fú","to get dressed"],["幫忙","bāng máng","to help"],["好動","hào dòng","active"],["奇怪","qí guài","strange"]]
   },
   {
     no: 2, title: "以前和現在", cls: "l2", color: "var(--l2)",
-    read: [["除了","chú le"],["包括","bāo kuò"],["毯子","tǎn zi"],["其他","qí tā"],["依然","yī rán"]],
-    write: [["以前","yǐ qián"],["一切","yí qiè"],["睡覺","shuì jiào"],["顏色","yán sè"],["但是","dàn shì"],["有些","yǒu xiē"],["一樣","yí yàng"],["功課","gōng kè"],["故事","gù shi"],["改變","gǎi biàn"],["美麗","měi lì"],["陪着","péi zhe"]]
+    read: [["除了","chú le","except for"],["包括","bāo kuò","to include"],["毯子","tǎn zi","blanket"],["其他","qí tā","others"],["依然","yī rán","still"]],
+    write: [["以前","yǐ qián","in the past"],["一切","yí qiè","everything"],["睡覺","shuì jiào","to sleep"],["顏色","yán sè","colour"],["但是","dàn shì","but"],["有些","yǒu xiē","some"],["一樣","yí yàng","the same"],["功課","gōng kè","homework"],["故事","gù shi","story"],["改變","gǎi biàn","to change"],["美麗","měi lì","beautiful"],["陪着","péi zhe","to keep company"]]
   },
   {
     no: 3, title: "換牙", cls: "l3", color: "var(--l3)",
-    read: [["脫落","tuō luò"],["耍把戲","shuǎ bǎ xì"],["抱不平","bào bù píng"]],
-    write: [["頑皮","wán pí"],["自覺","zì jué"],["照鏡子","zhào jìng zi"],["遊樂場","yóu lè chǎng"],["關閉","guān bì"],["門牙","mén yá"],["之後","zhī hòu"],["嘴","zuǐ"],["接下來","jiē xià lái"],["吹氣","chuī qì"],["幸好","xìng hǎo"],["替","tì"]]
+    read: [["脫落","tuō luò","to fall out"],["耍把戲","shuǎ bǎ xì","to play tricks"],["抱不平","bào bù píng","to cry out against injustice"]],
+    write: [["頑皮","wán pí","naughty"],["自覺","zì jué","self-disciplined"],["照鏡子","zhào jìng zi","to look in the mirror"],["遊樂場","yóu lè chǎng","playground"],["關閉","guān bì","to close"],["門牙","mén yá","front tooth"],["之後","zhī hòu","afterwards"],["嘴","zuǐ","mouth"],["接下來","jiē xià lái","next"],["吹氣","chuī qì","to blow"],["幸好","xìng hǎo","luckily"],["替","tì","to replace"]]
   },
   {
     no: 4, title: "在爸爸的肩膀上", cls: "l4", color: "var(--l4)",
-    read: [["寬闊","kuān kuò"],["肩膀","jiān bǎng"],["寶貝","bǎo bèi"]],
-    write: [["藍天白雲","lán tiān bái yún"],["抓緊","zhuā jǐn"],["強壯","qiáng zhuàng"],["頭髮","tóu fa"],["聞","wén"],["味道","wèi dào"],["摘星星","zhāi xīng xing"],["夜空","yè kōng"],["摸到","mō dào"],["伸手","shēn shǒu"],["一定","yí dìng"],["只要","zhǐ yào"]]
+    read: [["寬闊","kuān kuò","broad"],["肩膀","jiān bǎng","shoulder"],["寶貝","bǎo bèi","darling"]],
+    write: [["藍天白雲","lán tiān bái yún","blue sky and white clouds"],["抓緊","zhuā jǐn","to hold tight"],["強壯","qiáng zhuàng","strong"],["頭髮","tóu fa","hair"],["聞","wén","to smell"],["味道","wèi dào","smell; taste"],["摘星星","zhāi xīng xing","to pick stars"],["夜空","yè kōng","night sky"],["摸到","mō dào","to touch"],["伸手","shēn shǒu","to reach out"],["一定","yí dìng","surely"],["只要","zhǐ yào","as long as"]]
   }
 ];
 
@@ -373,7 +382,7 @@ document.getElementById("lessonCards").innerHTML = LESSONS.map((L,i)=>`
   <div class="lesson-card lc${L.no}" onclick="document.getElementById('${i===0?"read":"write"}').scrollIntoView()">
     <div class="no">第 ${L.no} 課</div>
     <div class="tt">《${L.title}》</div>
-    <div class="ct">認讀 ${L.read.length} 個 · 書寫 ${L.write.length} 個詞語</div>
+    <div class="ct">認讀 ${L.read.length} 個 · 書寫 ${L.write.length} 個詞語<br><span class="en-gloss">Read ${L.read.length} · Write ${L.write.length} words</span></div>
   </div>`).join("");
 
 /* ==================== READ SECTION ==================== */
@@ -381,7 +390,7 @@ document.getElementById("readBlocks").innerHTML = LESSONS.map(L=>`
   <div class="lesson-block ${L.cls}">
     <div class="lb-title">第 ${L.no} 課《${L.title}》<span class="chip">認讀 ${L.read.length} 個</span></div>
     <div class="word-grid">
-      ${L.read.map(r=>`<div class="rw-card" onclick="speak('${r[0]}', this)"><span class="w">${r[0]}</span><span class="py">${r[1]}</span><span class="sp">🔊</span></div>`).join("")}
+      ${L.read.map(r=>`<div class="rw-card" onclick="speak('${r[0]}', this)"><span class="w">${r[0]}</span><span class="mid"><span class="py">${r[1]}</span><span class="en-gloss">${r[2]}</span></span><span class="sp">🔊</span></div>`).join("")}
     </div>
   </div>`).join("");
 
@@ -401,7 +410,7 @@ document.getElementById("writeBlocks").innerHTML = LESSONS.map((L, li)=>`
     <div class="write-grid">
       ${L.write.map((w, wi)=>`
         <div class="word-block t${L.no}">
-          <div class="top"><span class="py">${w[1]}</span><button class="sp" title="讀一讀" onclick="speak('${w[0]}')">🔊</button></div>
+          <div class="top"><span class="py">${w[1]}</span><span class="en-gloss">${w[2]}</span><button class="sp" title="讀一讀 Read aloud" onclick="speak('${w[0]}')">🔊</button></div>
           <div class="char-row">
             ${[...w[0]].map((ch, ci)=>`
               <div class="char-tile">
@@ -448,7 +457,7 @@ function setFsMeta(html){ document.getElementById("fsMeta").innerHTML = html; }
 function fsRender(){
   const item = FLAT[FS.f];
   document.getElementById("fsWord").textContent = item.word;
-  document.getElementById("fsPos").textContent = `第 ${item.li+1} 課 · ${item.py} · 第 ${FS.c+1}/${item.chars.length} 個字`;
+  document.getElementById("fsPos").textContent = `第 ${item.li+1} 課 Lesson ${item.li+1} · ${item.py} · ${item.chars[FS.c]} 第 ${FS.c+1}/${item.chars.length} 個字`;
   document.getElementById("fsPrev").disabled = (FS.f===0 && FS.c===0);
   document.getElementById("fsNext").disabled = (FS.f===FLAT.length-1 && FS.c===item.chars.length-1);
   document.getElementById("fsPrevW").disabled = FS.f===0;
@@ -457,7 +466,7 @@ function fsRender(){
   const host = document.getElementById("fsWriterHost");
   host.innerHTML = "";
   const n = window.CHAR_DATA[ch] ? window.CHAR_DATA[ch].strokes.length : "?";
-  setFsMeta(`「${ch}」 共 ${n} 畫 <span class="note">跟着動畫，用手指寫一寫</span>`);
+  setFsMeta(`「${ch}」 共 ${n} 畫 · ${n} strokes <span class="note">跟着動畫，用手指寫一寫 · trace along with your finger</span>`);
   if(window.CHAR_DATA[ch]){
     FS.writer = HanziWriter.create(host, ch, fsWriterOpts());
     FS.writer.hideCharacter();
@@ -502,7 +511,7 @@ document.getElementById("fsPrevW").onclick = ()=>step(0,-1);
 document.getElementById("fsNextW").onclick = ()=>step(0,1);
 document.getElementById("fsPlay").onclick = ()=>{
   if(!FS.writer) return;
-  setFsMeta(`「${FLAT[FS.f].chars[FS.c]}」 看清楚筆畫順序 ✍️`);
+  setFsMeta(`「${FLAT[FS.f].chars[FS.c]}」 看清楚筆畫順序 Watch the stroke order carefully ✍️`);
   FS.writer.hideCharacter(); FS.writer.showOutline();
   FS.writer.animateCharacter({strokeAnimationSpeed:FS.speed, delayBetweenStrokes:420*FS.speed});
 };
@@ -510,20 +519,20 @@ document.getElementById("fsShow").onclick = ()=>{
   if(!FS.writer) return;
   FS.writer.showOutline(); FS.writer.showCharacter();
   const ch = FLAT[FS.f].chars[FS.c];
-  setFsMeta(`「${ch}」 共 ${window.CHAR_DATA[ch].strokes.length} 畫`);
+  setFsMeta(`「${ch}」 共 ${window.CHAR_DATA[ch].strokes.length} 畫 · ${window.CHAR_DATA[ch].strokes.length} strokes`);
 };
 document.getElementById("fsQuiz").onclick = ()=>{
   if(!FS.writer) return;
   const ch = FLAT[FS.f].chars[FS.c];
   const total = window.CHAR_DATA[ch].strokes.length;
-  setFsMeta(`✍ 小測驗：按順序寫「${ch}」 <span class="note">在字上按筆畫順序拖動</span>`);
+  setFsMeta(`✍ 小測驗 Quiz：按順序寫「${ch}」 <span class="note">在字上按筆畫順序拖動 · drag along the strokes in order</span>`);
   FS.writer.hideCharacter(); FS.writer.showOutline();
   FS.writer.quiz({
     showHintAfterMisses: 2,
     leniency: 1.2,
-    onCorrectStroke: s=>setFsMeta(`✍ 第 ${s.strokeNum+1} / ${total} 畫 ✔ 繼續！`),
-    onMistake: s=>setFsMeta(`❌ 第 ${s.strokeNum+1} 畫不對，再試一次`),
-    onComplete: sum=>setFsMeta(sum.totalMistakes===0 ? "🎉 全部正確，太棒了！" : `🎉 完成！共錯了 ${sum.totalMistakes} 筆，再試一次？`)
+    onCorrectStroke: s=>setFsMeta(`✍ 第 ${s.strokeNum+1} / ${total} 畫 ✔ 繼續！Keep going!`),
+    onMistake: s=>setFsMeta(`❌ 第 ${s.strokeNum+1} 畫不對，再試一次 Not quite — try again`),
+    onComplete: sum=>setFsMeta(sum.totalMistakes===0 ? "🎉 全部正確，太棒了！Perfect!" : `🎉 完成！共錯了 ${sum.totalMistakes} 筆，再試一次？Done with ${sum.totalMistakes} mistakes — try again?`)
   });
 };
 document.getElementById("fsSpeak").onclick = ()=>speak(FLAT[FS.f].word);
@@ -544,16 +553,16 @@ document.querySelectorAll(".tab-btn").forEach(b=>b.onclick = ()=>{
 
 /* ---- 1. 選詞填空 ---- */
 const FILL = [
-  ["妹妹今年", "，已經會自己走路了。", "兩歲"],
-  ["弟弟很", "，上課時總是坐不住。", "好動"],
-  ["我每天晚上九點就上床", "。", "睡覺"],
-  ["今天天氣晴朗，天空上有", "。", "藍天白雲"],
-  ["奶奶年紀大了，", "都變白了。", "頭髮"],
-  ["放學後，我", "媽媽去買菜。", "陪着"],
-  ["這幾年，我的家鄉", "很大。", "改變"],
-  ["公園裏的花開得真", "！", "美麗"],
-  ["我想出去玩，", "要先做完功課。", "但是"],
-  ["他", "喜歡畫畫，每天都練習。", "非常"]
+  ["妹妹今年", "，已經會自己走路了。", "兩歲", "My little sister is two years old this year; she can already walk by herself."],
+  ["弟弟很", "，上課時總是坐不住。", "好動", "My little brother is very active; he can never sit still in class."],
+  ["我每天晚上九點就上床", "。", "睡覺", "I go to bed to sleep at nine every night."],
+  ["今天天氣晴朗，天空上有", "。", "藍天白雲", "The weather is fine today; there are blue skies and white clouds."],
+  ["奶奶年紀大了，", "都變白了。", "頭髮", "Grandma is getting old, and her hair has all turned white."],
+  ["放學後，我", "媽媽去買菜。", "陪着", "After school, I keep Mum company to go grocery shopping."],
+  ["這幾年，我的家鄉", "很大。", "改變", "My hometown has changed a lot in recent years."],
+  ["公園裏的花開得真", "！", "美麗", "The flowers in the park bloom so beautifully!"],
+  ["我想出去玩，", "要先做完功課。", "但是", "I want to go out to play, but I must finish my homework first."],
+  ["他", "喜歡畫畫，每天都練習。", "非常", "He likes drawing very much and practises every day."]
 ];
 let fillState = { sel:null, filled:{} };
 function renderFill(){
@@ -561,13 +570,13 @@ function renderFill(){
   const bank = FILL.map(f=>f[2]).sort(()=>Math.random()-.5);
   const panel = document.getElementById("panel-fill");
   panel.innerHTML = `
-    <div class="bank" id="fillBank"><span class="lbl">📚 詞語庫（先點詞語，再點句子中的橫線）</span>
+    <div class="bank" id="fillBank"><span class="lbl">📚 詞語庫（先點詞語，再點句子中的橫線） <span class="en-gloss">Word bank — tap a word first, then tap a blank in the sentence</span></span>
       ${bank.map(w=>`<button class="chip-w" data-w="${w}">${w}</button>`).join("")}
     </div>
-    ${FILL.map((f,i)=>`<div class="q-item">${i+1}. ${f[0]}<span class="blank" data-i="${i}">＿＿＿＿</span>${f[1]}</div>`).join("")}
+    ${FILL.map((f,i)=>`<div class="q-item">${i+1}. ${f[0]}<span class="blank" data-i="${i}">＿＿＿＿</span>${f[1]}<span class="q-en">${f[3]}</span></div>`).join("")}
     <div class="p-actions">
-      <button class="btn-main" id="fillCheck">✅ 檢查答案</button>
-      <button class="btn-ghost" id="fillReset">🔄 重新開始</button>
+      <button class="btn-main" id="fillCheck">✅ 檢查答案 <small>Check</small></button>
+      <button class="btn-ghost" id="fillReset">🔄 重新開始 <small>Restart</small></button>
       <span class="score" id="fillScore"></span>
     </div>`;
   panel.querySelectorAll(".chip-w").forEach(c=>c.onclick = ()=>{
@@ -600,8 +609,8 @@ function renderFill(){
       if(good) ok++;
     });
     const sc = document.getElementById("fillScore");
-    if(done < FILL.length){ sc.textContent = `還有 ${FILL.length-done} 題未完成`; sc.className="score bad"; return; }
-    sc.textContent = `得分：${ok} / ${FILL.length} ${ok===FILL.length?"🎉 滿分！":""}`;
+    if(done < FILL.length){ sc.textContent = `還有 ${FILL.length-done} 題未完成 · ${FILL.length-done} left`; sc.className="score bad"; return; }
+    sc.textContent = `得分 Score：${ok} / ${FILL.length} ${ok===FILL.length?"🎉 滿分！Full marks!":""}`;
     sc.className = "score " + (ok===FILL.length?"ok":(ok>=FILL.length*0.6?"":"bad"));
   };
   document.getElementById("fillReset").onclick = renderFill;
@@ -613,12 +622,12 @@ function renderChoice(panelId, data, prefix){
   const panel = document.getElementById(panelId);
   panel.innerHTML = data.map((q,i)=>`
     <div class="q-item" data-q="${i}">
-      <div class="q-line">${i+1}. ${q.q}</div>
+      <div class="q-line">${i+1}. ${q.q}<span class="q-en">${q.en||""}</span></div>
       <div class="opt-row">${q.opts.map((o,j)=>`<button class="opt" data-j="${j}">${o}</button>`).join("")}</div>
       <div class="fb"></div>
     </div>`).join("") + `
     <div class="p-actions">
-      <button class="btn-ghost" id="${prefix}Reset">🔄 重做</button>
+      <button class="btn-ghost" id="${prefix}Reset">🔄 重做 <small>Try again</small></button>
       <span class="score" id="${prefix}Score"></span>
     </div>`;
   const score = ()=>{ const done = panel.querySelectorAll(".fb.ok,.fb.bad").length/2;
@@ -633,10 +642,10 @@ function renderChoice(panelId, data, prefix){
       btn.classList.add(good?"ok":"bad");
       if(!good) item.querySelectorAll(".opt").forEach(b=>{ if(b.textContent===q.a) b.classList.add("ok"); });
       item.querySelectorAll(".opt").forEach(b=>b.disabled = true);
-      fb.textContent = (good ? "✔ 答對了！" : "✘ 正確答案是「" + q.a + "」") + (q.note ? "　💡 " + q.note : "");
+      fb.textContent = (good ? "✔ 答對了！Correct!" : "✘ 正確答案是 The answer is「" + q.a + "」") + (q.note ? "　💡 " + q.note : "");
       fb.className = "fb show " + (good?"ok":"bad");
       const s = score();
-      if(s){ const sc = document.getElementById(prefix+"Score"); sc.textContent = `得分：${s[0]} / ${s[1]} ${s[0]===s[1]?"🎉 滿分！":""}`; sc.className="score "+(s[0]===s[1]?"ok":"bad"); }
+      if(s){ const sc = document.getElementById(prefix+"Score"); sc.textContent = `得分 Score：${s[0]} / ${s[1]} ${s[0]===s[1]?"🎉 滿分！Full marks!":""}`; sc.className="score "+(s[0]===s[1]?"ok":"bad"); }
     });
   });
   document.getElementById(prefix+"Reset").onclick = ()=>renderChoice(panelId, data, prefix);
@@ -644,34 +653,34 @@ function renderChoice(panelId, data, prefix){
 
 /* ---- 2. 多音字選擇 ---- */
 const DUO = [
-  {q:"弟弟很「好」動，一分鐘也停不下來。「好」讀作：", opts:["hǎo","hào"], a:"hào", note:"好(hào)動 = 喜歡動，愛動"},
-  {q:"她是一個「好」孩子，人人都喜歡她。「好」讀作：", opts:["hǎo","hào"], a:"hǎo", note:"好(hǎo) = 優秀的、善良的"},
-  {q:"我「得」到老師的稱讚，很開心。「得」讀作：", opts:["dé","děi"], a:"dé", note:"得(dé)到 = 獲得"},
-  {q:"你「得」快一點兒，不然要遲到了。「得」讀作：", opts:["dé","děi"], a:"děi", note:"得(děi) = 必須、需要"},
-  {q:"他睡「着」了，我們小聲一點。「着」讀作：", opts:["zhe","zháo"], a:"zháo", note:"睡着(zháo) = 進入睡眠"},
-  {q:"妹妹安靜地看「着」圖畫書。「着」讀作：", opts:["zhe","zháo"], a:"zhe", note:"看着(zhe) = 動詞後的助詞，讀輕聲"}
+  {q:"弟弟很「好」動，一分鐘也停不下來。「好」讀作：", en:"My brother is so active — he can't stop for even a minute. How is 好 read?", opts:["hǎo","hào"], a:"hào", note:"好(hào)動 = 喜歡動，愛動 to be fond of moving about"},
+  {q:"她是一個「好」孩子，人人都喜歡她。「好」讀作：", en:"She is a good child; everyone likes her. How is 好 read?", opts:["hǎo","hào"], a:"hǎo", note:"好(hǎo) = 優秀的、善良的 good, well-behaved"},
+  {q:"我「得」到老師的稱讚，很開心。「得」讀作：", en:"I got praise from my teacher and I'm very happy. How is 得 read?", opts:["dé","děi"], a:"dé", note:"得(dé)到 = 獲得 to obtain, to get"},
+  {q:"你「得」快一點兒，不然要遲到了。「得」讀作：", en:"You have to hurry up, or you'll be late. How is 得 read?", opts:["dé","děi"], a:"děi", note:"得(děi) = 必須、需要 must, have to"},
+  {q:"他睡「着」了，我們小聲一點。「着」讀作：", en:"He has fallen asleep — let's be quiet. How is 着 read?", opts:["zhe","zháo"], a:"zháo", note:"睡着(zháo) = 進入睡眠 to fall asleep"},
+  {q:"妹妹安靜地看「着」圖畫書。「着」讀作：", en:"My little sister is quietly reading a picture book. How is 着 read?", opts:["zhe","zháo"], a:"zhe", note:"看着(zhe) = 動詞後的助詞，讀輕聲 a particle after a verb, unstressed"}
 ];
 renderChoice("panel-duo", DUO, "duo");
 
 /* ---- 3. 形近字選擇 ---- */
 const FX = [
-  {q:"大＿＿＿的鼻子很長，還會噴水。", opts:["象","像"], a:"象", note:"大象是動物，用「象」"},
-  {q:"妹妹長得＿＿＿媽媽一樣漂亮。", opts:["象","像"], a:"像", note:"好像、相似用「像」（有单人旁）"},
-  {q:"爺爺每天到田裏工作，十分＿＿＿苦。", opts:["辛","幸"], a:"辛", note:"辛苦用「辛」（有「十」字）"},
-  {q:"＿＿＿好今天沒有下雨，我們可以去公園玩。", opts:["辛","幸"], a:"幸", note:"幸好、幸福用「幸」（有「¥」一橫短）"},
-  {q:"＿＿＿色的天空中飄着幾朵白雲。", opts:["藍","籃"], a:"藍", note:"藍色、藍天用「藍」（草字頭）"},
-  {q:"哥哥最喜歡打＿＿＿球。", opts:["藍","籃"], a:"籃", note:"籃球、竹籃用「籃」（竹字頭）"}
+  {q:"大＿＿＿的鼻子很長，還會噴水。", en:"The elephant has a long nose and can spray water.", opts:["象","像"], a:"象", note:"大象是動物，用「象」 elephant is an animal — use 象"},
+  {q:"妹妹長得＿＿＿媽媽一樣漂亮。", en:"My little sister looks just as pretty as Mum.", opts:["象","像"], a:"像", note:"好像、相似用「像」（有单人旁） to resemble — use 像 (with the person radical)"},
+  {q:"爺爺每天到田裏工作，十分＿＿＿苦。", en:"Grandpa works in the fields every day — very hard work.", opts:["辛","幸"], a:"辛", note:"辛苦用「辛」（有「十」字） hardworking/toilsome — use 辛"},
+  {q:"＿＿＿好今天沒有下雨，我們可以去公園玩。", en:"Luckily it didn't rain today, so we can go to the park.", opts:["辛","幸"], a:"幸", note:"幸好、幸福用「幸」 fortunately, lucky — use 幸"},
+  {q:"＿＿＿色的天空中飄着幾朵白雲。", en:"A few white clouds drift in the blue sky.", opts:["藍","籃"], a:"藍", note:"藍色、藍天用「藍」（草字頭） blue (colour/sky) — use 藍 (grass radical)"},
+  {q:"哥哥最喜歡打＿＿＿球。", en:"My big brother loves playing basketball.", opts:["藍","籃"], a:"籃", note:"籃球、竹籃用「籃」（竹字頭） basket(ball) — use 籃 (bamboo radical)"}
 ];
 renderChoice("panel-fx", FX, "fx");
 
 /* ---- 4. 句式練習 ---- */
 const PAT = [
-  {q:"妹妹越長越＿＿＿。", opts:["漂亮","睡覺","頭髮"], a:"漂亮", note:"越……越…… 表示程度越來越高"},
-  {q:"我會講故事，還會＿＿＿。", opts:["畫畫","以前","關閉"], a:"畫畫", note:"會……還會…… 表示學會的本領"},
-  {q:"他一到家，就＿＿＿做功課。", opts:["開始","美麗","門牙"], a:"開始", note:"一……就…… 表示動作緊接着發生"},
-  {q:"我坐得很＿＿＿，一點也不搖晃。", opts:["穩","怪","嘴"], a:"穩", note:"……得穩：坐得穩、扶得牢、抓得緊"},
-  {q:"弟弟抓得很＿＿＿，一點也不放開。", opts:["緊","甜","藍"], a:"緊", note:"……得緊 = 抓得很用力"},
-  {q:"書包裏除了課本，＿＿＿只有一枝筆。", opts:["就","還","越"], a:"就", note:"除了……就…… 表示只限於這些"}
+  {q:"妹妹越長越＿＿＿。", en:"My little sister grows more and more ___.", opts:["漂亮","睡覺","頭髮"], a:"漂亮", note:"越……越…… 表示程度越來越高 the more … the more …"},
+  {q:"我會講故事，還會＿＿＿。", en:"I can tell stories, and I can also ___.", opts:["畫畫","以前","關閉"], a:"畫畫", note:"會……還會…… 表示學會的本領 can … and can also …"},
+  {q:"他一到家，就＿＿＿做功課。", en:"As soon as he gets home, he ___ his homework.", opts:["開始","美麗","門牙"], a:"開始", note:"一……就…… 表示動作緊接着發生 as soon as … then …"},
+  {q:"我坐得很＿＿＿，一點也不搖晃。", en:"I sit very ___; I don't wobble at all.", opts:["穩","怪","嘴"], a:"穩", note:"……得穩：坐得穩、扶得牢、抓得緊 steadily, firmly, tightly"},
+  {q:"弟弟抓得很＿＿＿，一點也不放開。", en:"My brother grips very ___; he won't let go at all.", opts:["緊","甜","藍"], a:"緊", note:"……得緊 = 抓得很用力 gripping tightly"},
+  {q:"書包裏除了課本，＿＿＿只有一枝筆。", en:"Apart from textbooks, there is only one pen in the schoolbag.", opts:["就","還","越"], a:"就", note:"除了……就…… 表示只限於這些 apart from …, only …"}
 ];
 renderChoice("panel-pat", PAT, "pat");
 </script>
